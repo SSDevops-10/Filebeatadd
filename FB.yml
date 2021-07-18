@@ -1,0 +1,13 @@
+conf = {
+  'filebeat.modules' => [],
+  'prospectors' => [],
+  'logging.level' => 'info',
+  'logging.to_files' => true,
+  'logging.files' => { 'name' => 'filebeat' },
+  'output.elasticsearch' => { 'hosts' => ['http://65.0.178.81:9200'] }
+}
+
+filebeat_config 'default' do
+  config conf
+  action :create
+end
